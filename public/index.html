@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataMigrator Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #drop-area {
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background-color: #f9f9f9;
+        }
+        #drop-area.highlight {
+            border-color: #27ae60;
+            background-color: #e8f8f5;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-gray-800">Data Migrator Web</h1>
+            <p class="text-gray-500">Sube un archivo para generar el esquema DDL y migrar a MySQL.</p>
+        </header>
+
+        <!-- Formulario de Subida -->
+        <form id="uploadForm" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-4">
+                <input type="file" id="fileInput" name="archivo" class="flex-grow border border-gray-300 p-2 rounded-md">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-150" id="submitBtn">
+                    Migrar
+                </button>
+            </div>
+            <!-- Área de Arrastre -->
+            <div id="drop-area" class="mt-4">
+                Arrastra tu archivo aquí (CSV, JSON, XML)
+            </div>
+        </form>
+
+        <!-- Indicador de Carga -->
+        <div id="loading" class="hidden text-center mt-6">
+            <div class="animate-spin inline-block w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+            <p class="mt-2 text-blue-600">Procesando y migrando datos...</p>
+        </div>
+        
+        <!-- Contenedor para mostrar resultados -->
+        <div id="result" class="mt-10"></div>
+    </div>
+
+    <!-- Enlazamos el JS externo -->
+    <script src="index.js"></script>
+</body>
+</html>

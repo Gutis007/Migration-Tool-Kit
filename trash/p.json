@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "José Álvarez",
+        "ciudad": "México",
+        "comentario": "¡Excelente servicio!"
+    },
+    {
+        "id": 2,
+        "nombre": "María Núñez",
+        "ciudad": "Bogotá",
+        "comentario": "La aplicación funciona muy bien 😊"
+    },
+    {
+        "id": 3,
+        "nombre": "François Dupont",
+        "ciudad": "París",
+        "comentario": "Très satisfait, merci!"
+    }
+]
